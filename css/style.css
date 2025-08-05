@@ -1,7 +1,34 @@
 .page-content {
-  padding: 20px;
+  padding: 24px;
+  background-color: #fafafa;
+  min-height: calc(100vh - 128px);
 }
+
 .mdl-card {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  border-left: 4px solid #35a126; 
+}
+
+.mdl-card__supporting-text {
+  font-size: 16px;
+  color: #333;
+  padding: 16px;
+  word-break: break-word;
+}
+
+.mdl-textfield {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+#btnAdd {
+  margin-left: 8px;
+}
+
+.mdl-layout-title img {
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
