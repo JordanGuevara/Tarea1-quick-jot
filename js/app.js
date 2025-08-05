@@ -1,7 +1,7 @@
 const input = document.getElementById("nota");
 const btnAdd = document.getElementById("btnAdd");
 const container = document.getElementById("notesContainer");
-const btnInstall = document.querySelector("#app--install");
+const btnInstall = document.querySelector("#banner--install");
 let deferredPrompt;
 
 let notas = JSON.parse(localStorage.getItem("notas")) || [];
@@ -32,7 +32,7 @@ btnAdd.addEventListener("click", () => {
 });
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register('/sw.js')
     .then(() => console.log('Service Worker registrado'))
     .catch((err) => console.error('Error al registrar SW', err));
 }
@@ -41,7 +41,6 @@ window.addEventListener("beforeinstallprompt", (e) => {
   console.log("Evento anulado");
   e.preventDefault();
   deferredPrompt = e;
-  btnInstall.style.display = "block";
 });
 
 btnInstall.addEventListener("click", async () => {
@@ -50,7 +49,8 @@ btnInstall.addEventListener("click", async () => {
     const response = await deferredPrompt.userChoice;
     if(response.outcome ==="accepted"){
       console.log("Usuario acepto la descarga");
-
+    }else{
+      console.log("Usuario rechazo la descarga");
     }
   }
 

@@ -70,5 +70,6 @@ cd Tarea1-quick-jot
 
 ```bash
 npm install -g http-server  # Solo la primera vez para instalar el servidor estático
-http-server -c-1            # Para servir la app localmente sin cache (modo desarrollo)
+http-server -c-1            # Opción 1: Para servir la app localmente sin cache (modo desarrollo)
+npx http-server -c-1        # Opción 2: Si la anterior línea de comando no funciona usar este para ejecutarlo.
 ```
